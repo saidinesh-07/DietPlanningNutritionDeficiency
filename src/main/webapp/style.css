@@ -1,0 +1,236 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #000;
+}
+
+.navbar .navbar-brand {
+    color: black;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: black;
+    font-weight: normal;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: black;
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+/* Dropdown Styles */
+.navbar .dropdown-menu {
+    padding: 10px;
+}
+
+.dropdown-header {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.dropdown-item {
+    color: #333;
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Header Section */
+header {
+    margin-bottom: 30px;
+}
+
+/* Main Content Section */
+main {
+    padding: 30px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+p.lead {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+/* About Us Section */
+main h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+main p.lead {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+section h4 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Card Styles */
+.card {
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Call-to-Action Buttons */
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 1.25rem;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-success:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Footer Section */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #ffc107;
+}
+
+/* About Us Page Specific Styles */
+.about-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.about-section .row {
+    margin-top: 20px;
+}
+
+.about-section h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+.about-section .text-center {
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
