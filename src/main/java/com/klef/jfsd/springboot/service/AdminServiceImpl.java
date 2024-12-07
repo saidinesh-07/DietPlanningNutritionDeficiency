@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.klef.jfsd.springboot.model.Admin;
-import com.klef.jfsd.springboot.model.Nutritionist;
+import com.klef.jfsd.springboot.model.Dietician;
 import com.klef.jfsd.springboot.model.User;
 import com.klef.jfsd.springboot.repository.AdminRepository;
-import com.klef.jfsd.springboot.repository.NutritionistRepository;
+import com.klef.jfsd.springboot.repository.DieticianRepository;
 import com.klef.jfsd.springboot.repository.UserRepository;
 
 @Service
@@ -23,7 +23,7 @@ public class AdminServiceImpl implements AdminService
     private AdminRepository adminRepository;
 
     @Autowired
-    private NutritionistRepository nutritionistRepository;
+    private DieticianRepository nutritionistRepository;
 
     @Override
     public List<User> ViewAllUsers() 
@@ -65,9 +65,9 @@ public class AdminServiceImpl implements AdminService
 
 
     @Override
-    public String addnutritionist(Nutritionist n) 
+    public String addnutritionist(Dietician n) 
     {
-        Nutritionist existingNutritionist = nutritionistRepository.findByEmail(n.getEmail());
+        Dietician existingNutritionist = nutritionistRepository.findByEmail(n.getEmail());
         if (existingNutritionist != null) {
             return "Nutritionist already exists with this email";
         }

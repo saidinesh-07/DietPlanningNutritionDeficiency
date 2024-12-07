@@ -20,7 +20,7 @@ public class User
     
     @ManyToOne
     @JoinColumn(name = "nutritionist_id")
-    private Nutritionist nutritionist;
+    private Dietician nutritionist;
     
     @Column(name="user_name", nullable=false, length=50)
     private String name;
@@ -79,11 +79,11 @@ public class User
 		this.id = id;
 	}
 
-	public Nutritionist getNutritionist() {
+	public Dietician getNutritionist() {
 		return nutritionist;
 	}
 
-	public void setNutritionist(Nutritionist nutritionist) {
+	public void setNutritionist(Dietician nutritionist) {
 		this.nutritionist = nutritionist;
 	}
 

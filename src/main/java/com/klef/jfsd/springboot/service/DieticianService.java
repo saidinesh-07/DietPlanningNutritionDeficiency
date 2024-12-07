@@ -2,10 +2,10 @@ package com.klef.jfsd.springboot.service;
 
 import java.util.List;
 
-import com.klef.jfsd.springboot.model.Nutritionist;
+import com.klef.jfsd.springboot.model.Dietician;
 import com.klef.jfsd.springboot.model.User;
 
-public interface NutritionistService 
+public interface DieticianService 
 {
 
 	public List<User> getAssignedUsers(int nid);
@@ -20,12 +20,12 @@ public interface NutritionistService
 
 	public String updateUserHealth(int uid, String healthStatus);
 
-	public String addnutritionist(Nutritionist nutritionist);
+	public String addnutritionist(Dietician nutritionist);
 
-	public List<Nutritionist> getAllNutritionists();
+	public List<Dietician> getAllNutritionists();
 
 	public void deleteNutritionist(int id);
 
-	public Nutritionist authenticate(String email, String password);
+	public Dietician authenticate(String email, String password);
 
 }

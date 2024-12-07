@@ -32,11 +32,11 @@
                                     <h6 class="dropdown-header">Login</h6>
                                     <a class="dropdown-item" href="adminlogin">Login as Admin</a>
                                     <a class="dropdown-item" href="userlogin">Login as User</a>
-                                    <a class="dropdown-item" href="nutritionistlogin">Login as Nutritionist</a>
+                                    <a class="dropdown-item" href="dieticianlogin">Login as Dietician</a>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header">Register</h6>
                                     <a class="dropdown-item" href="userreg">Register as User</a>
-                                    <a class="dropdown-item" href="registernutritionist">Register as Nutritionist</a>
+                                    <a class="dropdown-item" href="dieticianreg">Register as Dietician</a>
                                 </div>
                             </div>
                         </li>

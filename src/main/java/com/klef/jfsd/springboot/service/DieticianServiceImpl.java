@@ -6,25 +6,25 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.klef.jfsd.springboot.model.Nutritionist;
+import com.klef.jfsd.springboot.model.Dietician;
 import com.klef.jfsd.springboot.model.User;
-import com.klef.jfsd.springboot.repository.NutritionistRepository;
+import com.klef.jfsd.springboot.repository.DieticianRepository;
 import com.klef.jfsd.springboot.repository.UserRepository;
 
 @Service
-public class NutritionistServiceImpl implements NutritionistService 
+public class DieticianServiceImpl implements DieticianService 
 {
 
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
-    private NutritionistRepository nutritionistRepository;
+    private DieticianRepository dieticianRepository;
 
     
-    public Nutritionist authenticate(String email, String password) 
+    public Dietician authenticate(String email, String password) 
     {
-        Nutritionist nutritionist = nutritionistRepository.findByEmail(email);
+        Dietician nutritionist = dieticianRepository.findByEmail(email);
         if (nutritionist != null && nutritionist.getPassword().equals(password)) {
             return nutritionist;
         }
@@ -52,17 +52,19 @@ public class NutritionistServiceImpl implements NutritionistService
     public String saveBlogContent(int id, String blogContent) 
     {
         // Fetch the nutritionist by ID
-        Optional<Nutritionist> optionalNutritionist = nutritionistRepository.findById(id);
-
-        if (optionalNutritionist.isPresent()) {
-            Nutritionist nutritionist = optionalNutritionist.get();
-            nutritionist.getBlogs().add(blogContent);  // Assuming nutritionist has a list of blog content
-            nutritionistRepository.save(nutritionist);
-            return "Blog content saved successfully";
-        } else {
-            return "Nutritionist not found";
-        }
-    }
+//        Optional<Dietician> optionalNutritionist = dieticianRepository.findById(id);
+//
+//        if (optionalNutritionist.isPresent()) {
+//            Dietician nutritionist = optionalNutritionist.get();
+//            //nutritionist.getBlogs().add(blogContent);  // Assuming nutritionist has a list of blog content
+//            dieticianRepository.save(nutritionist);
+//            return "Blog content saved successfully";
+//        } else {
+//            return "Nutritionist not found";
+//        }
+    	
+    	return null;
+    } 
 
 
 //    @Override
@@ -97,22 +99,22 @@ public class NutritionistServiceImpl implements NutritionistService
     }
 
 	@Override
-	public String addnutritionist(Nutritionist nutritionist) {
-		nutritionistRepository.save(nutritionist);
+	public String addnutritionist(Dietician nutritionist) {
+		dieticianRepository.save(nutritionist);
 		return "Nutritionist Added Successfully";
 	}
 
 	@Override
-	public List<Nutritionist> getAllNutritionists() 
+	public List<Dietician> getAllNutritionists() 
 	{
-		return nutritionistRepository.findAll();
+		return dieticianRepository.findAll();
 	}
 
 	@Override
 	public void deleteNutritionist(int id) 
 	{
-		if (nutritionistRepository.existsById(id)) {
-            nutritionistRepository.deleteById(id);  // Delete nutritionist by id
+		if (dieticianRepository.existsById(id)) {
+            dieticianRepository.deleteById(id);  // Delete nutritionist by id
         }
 		
 	}

@@ -6,15 +6,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.klef.jfsd.springboot.model.Nutritionist;
+import com.klef.jfsd.springboot.model.Dietician;
 
 @Repository
-public interface NutritionistRepository extends JpaRepository<Nutritionist, Integer> 
+public interface DieticianRepository extends JpaRepository<Dietician, Integer> 
 {
     @Query("select n from Nutritionist n where n.email=?1")
-    public Nutritionist findByEmail(String email);
+    public Dietician findByEmail(String email);
 
-    public List<Nutritionist> findByexpertise(String expertise);
+    public List<Dietician> findByexpertise(String expertise);
 
     @Query("select n.blogs from Nutritionist n where n.id=?1")
     public List<String> findBlogsByNutritionistId(int id);
