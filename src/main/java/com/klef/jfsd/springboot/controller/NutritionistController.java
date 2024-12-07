@@ -21,6 +21,11 @@ public class NutritionistController
     @Autowired
     private NutritionistService nutritionistService;
     
+    @GetMapping("registernutritionist")
+    public ModelAndView registernutritionist() {
+    	return new ModelAndView("registernutritionist");
+    }
+    
     @GetMapping("nutritionistlogin")
     public ModelAndView nutritionistlogin() {
         ModelAndView mv = new ModelAndView("nutritionistlogin");  // JSP page to be rendered

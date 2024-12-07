@@ -34,6 +34,11 @@ public class AdminController
         mv.setViewName("adminlogin");
         return mv;
     }
+    
+    @GetMapping("dietplans")
+    public ModelAndView dietplans() {
+    	return new ModelAndView("dietplans");
+    }
 
     @GetMapping("adminhome")
     public ModelAndView adminhome() {
