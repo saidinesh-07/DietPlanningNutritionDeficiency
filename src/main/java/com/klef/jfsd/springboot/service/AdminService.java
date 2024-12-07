@@ -3,7 +3,7 @@ package com.klef.jfsd.springboot.service;
 import java.util.List;
 
 import com.klef.jfsd.springboot.model.Admin;
-import com.klef.jfsd.springboot.model.Dietician;
+import com.klef.jfsd.springboot.model.Nutritionist;
 import com.klef.jfsd.springboot.model.User;
 
 public interface AdminService 
@@ -14,5 +14,5 @@ public interface AdminService
 	public User displayUserById(int userId);
 	public String updateuserstatus(String status, int uid);
 	public String deleteuser(int uid);
-	public String addnutritionist(Dietician n);
+	public String addnutritionist(Nutritionist n);
 }

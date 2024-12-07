@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.klef.jfsd.springboot.model.Admin;
-import com.klef.jfsd.springboot.model.Dietician;
+import com.klef.jfsd.springboot.model.Nutritionist;
 import com.klef.jfsd.springboot.model.User;
 import com.klef.jfsd.springboot.service.AdminService;
-import com.klef.jfsd.springboot.service.DieticianService;
+import com.klef.jfsd.springboot.service.NutritionistService;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -26,7 +26,7 @@ public class AdminController
     private AdminService adminService;
 
     @Autowired
-    private DieticianService nutritionistService; // Add service for nutritionists
+    private NutritionistService nutritionistService; // Add service for nutritionists
 
     @GetMapping("adminlogin")
     public ModelAndView adminlogin() {
@@ -122,13 +122,13 @@ public class AdminController
     // GET method for displaying the Add Nutritionist form
     @GetMapping("addnutritionist")
     public String addNutritionistForm(Model model) {
-        model.addAttribute("nutritionist", new Dietician());  // Add a new Nutritionist object to the model
+        model.addAttribute("nutritionist", new Nutritionist());  // Add a new Nutritionist object to the model
         return "addnutritionist";  // Name of the JSP file (addnutritionist.jsp)
     }
 
     // POST method for handling the form submission
     @PostMapping("addnutritionist")
-    public String addNutritionist(@ModelAttribute("nutritionist") Dietician nutritionist, Model model) {
+    public String addNutritionist(@ModelAttribute("nutritionist") Nutritionist nutritionist, Model model) {
         // Call the service method to add the nutritionist
         String message = nutritionistService.addnutritionist(nutritionist);
         model.addAttribute("message", message);  // Add a message to be displayed in the view
@@ -138,7 +138,7 @@ public class AdminController
     @GetMapping("viewallnutritionists")
     public ModelAndView viewAllNutritionists() 
     {
-        List<Dietician> nutritionists = nutritionistService.getAllNutritionists();
+        List<Nutritionist> nutritionists = nutritionistService.getAllNutritionists();
         ModelAndView mv = new ModelAndView("viewallnutritionists");
         mv.addObject("nutritionistList", nutritionists);
         mv.addObject("nutritionistCount", nutritionists.size());

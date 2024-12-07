@@ -13,24 +13,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="dietician_table")
-public class Dietician 
+@Table(name="nutritionist_table")
+public class Nutritionist 
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    @Column(name="dietician_id")
+    @Column(name="nutritionist_id")
     private int id;
 
-    @Column(name="dietician_name", nullable=false, length=50)
+    @Column(name="nutritionist_name", nullable=false, length=50)
     private String name;
 
-    @Column(name="dietician_email", nullable=false, unique=true, length=50)
+    @Column(name="nutritionist_email", nullable=false, unique=true, length=50)
     private String email;
 
-    @Column(name="dietician_password", nullable=false, length=50)
+    @Column(name="nutritionist_password", nullable=false, length=50)
     private String password;
 
-    @Column(name="dietician_contact", nullable=false, unique=true, length=20)
+    @Column(name="nutritionist_contact", nullable=false, unique=true, length=20)
     private String contact;
 
     @Column(name="expertise", length=100)
@@ -42,6 +42,12 @@ public class Dietician
     @Column(name="dietary_recommendations", columnDefinition="TEXT")
     private String dietaryRecommendations; // General dietary guidance
 
+    @Column(name="blogs", columnDefinition="TEXT")
+    @ElementCollection
+    private List<String> blogs; // Blog content managed by the nutritionist
+
+    @Column(name="testimonials", columnDefinition="TEXT")
+    private String testimonials; // Testimonials or feedback for users
     
 
 	public int getId() {
@@ -108,7 +114,21 @@ public class Dietician
 		this.dietaryRecommendations = dietaryRecommendations;
 	}
 
+	public List<String> getBlogs() {
+		return blogs;
+	}
 
+	public void setBlogs(List<String> blogs) {
+		this.blogs = blogs;
+	}
+
+	public String getTestimonials() {
+		return testimonials;
+	}
+
+	public void setTestimonials(String testimonials) {
+		this.testimonials = testimonials;
+	}
 
     // Getters and setters for all fields
 
