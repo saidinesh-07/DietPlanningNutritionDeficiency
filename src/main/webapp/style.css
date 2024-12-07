@@ -1,37 +1,30 @@
 /* General Body Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
+    opacity: 0.95;
 }
 
 /* Navbar Styles */
 .navbar {
-    background-color: #008080;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #007bff;
 }
 
-.navbar .navbar-brand {
-    color: black;
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: black !important;
     font-weight: bold;
 }
 
-.navbar .navbar-nav .nav-link {
-    color: black;
-    font-weight: normal;
-}
-
-.navbar .navbar-nav .nav-link:hover {
-    color: black;
-}
-
-.navbar-toggler {
-    border-color: white;
+.navbar .nav-link:hover {
+    color: #007bff !important;
 }
 
 .navbar-toggler-icon {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Dropdown Styles */
@@ -53,20 +46,27 @@ body {
     color: white;
 }
 
-/* Header Section */
-header {
-    margin-bottom: 30px;
-}
-
 /* Main Content Section */
 main {
-    padding: 30px 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
 }
 
+/* Typography */
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 p.lead {
@@ -74,50 +74,19 @@ p.lead {
     color: #666;
 }
 
-/* About Us Section */
-main h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-main p.lead {
-    font-size: 1.5rem;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-section h4 {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-section p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 25px;
-}
-
-ul li {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
 /* Card Styles */
 .card {
     margin: 15px 0;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
@@ -126,18 +95,13 @@ ul li {
     object-fit: cover;
 }
 
-.card-body {
-    padding: 20px;
-}
-
 .card-title {
+    color: #007bff;
     font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .card-text {
-    font-size: 1rem;
-    color: #666;
+    color: #555;
 }
 
 /* Call-to-Action Buttons */
@@ -151,31 +115,25 @@ ul li {
     border-color: #28a745;
 }
 
+.btn-success:hover {
+    background-color: #218838;
+}
+
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
 }
 
-.btn-success:hover {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
 .btn-primary:hover {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #0056b3;
 }
 
 /* Footer Section */
 footer {
-    background-color: #343a40;
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     padding: 20px 0;
     text-align: center;
-}
-
-footer p {
-    margin: 0;
 }
 
 footer ul {
@@ -195,31 +153,6 @@ footer ul li a {
 
 footer ul li a:hover {
     color: #ffc107;
-}
-
-/* About Us Page Specific Styles */
-.about-section {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.about-section .row {
-    margin-top: 20px;
-}
-
-.about-section h4 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.about-section p {
-    font-size: 1.25rem;
-    color: #666;
-}
-
-.about-section .text-center {
-    margin-top: 40px;
 }
 
 /* Responsive Design */

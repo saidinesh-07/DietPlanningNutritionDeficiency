@@ -1,10 +1,10 @@
-<%@page import="com.klef.jfsd.springboot.model.Nutritionist"%>
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@page import="com.klef.jfsd.springboot.model.Nutritionist"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Consult Nutritionist</title>
+    <title>Nutritionist Details</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -43,29 +43,32 @@
     <!-- Main Content -->
     <main class="container mt-4">
         <section class="text-center">
-            <h2>Choose a Nutritionist</h2>
-            <p>Select a nutritionist to consult with.</p>
+            <h2>Nutritionist Details</h2>
+            <p>Consult with our expert to plan your diet and achieve your health goals.</p>
         </section>
 
-        <!-- List of Nutritionists -->
+        <!-- Nutritionist Information -->
         <section class="mt-4">
-            <div class="row">
-                <% 
-                // Static list of nutritionists
-                String[] names = {"Dr.Karthikeya", "Dr.Dinesh", "Dr.RK", "Dr. Bali", "Dr. Lee", "Dr. kick"};
-                String[] specialties = {"Weight Loss", "Nutritionist for Kids", "Sports Nutrition", "Vegan Diet", "Health & Wellness", "Diet for Diabetics"};
-                for (int i = 0; i < names.length; i++) {
-                %>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= names[i] %></h5>
-                                <p class="card-text">Specialty: <%= specialties[i] %></p>
-                                <a href="nutritionaldetails.jsp?name=<%= names[i] %>&specialty=<%= specialties[i] %>" class="btn btn-primary">Consult</a>
-                            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. <%= request.getParameter("name") %></h5>
+                            <p class="card-text"><strong>Specialty:</strong> <%= request.getParameter("specialty") %></p>
+                            <p class="card-text"><strong>Experience:</strong> Dr. <%= request.getParameter("name") %> has over 10 years of experience in the field of nutrition and dietetics. He has worked with individuals and families to help them achieve their health goals through personalized nutrition plans.</p>
+                            <p class="card-text"><strong>Qualifications:</strong> M.Sc. in Nutrition & Dietetics, Certified Clinical Nutritionist, Member of the Indian Dietetic Association (IDA).</p>
+                            <p class="card-text"><strong>What He Offers:</strong></p>
+                            <ul>
+                                <li>Personalized diet plans for weight loss, muscle gain, and overall health.</li>
+                                <li>Expert advice on managing chronic conditions such as diabetes, hypertension, and PCOS.</li>
+                                <li>Consultations for athletes to optimize performance through nutrition.</li>
+                                <li>Nutrition counseling for children, pregnant women, and elderly people.</li>
+                            </ul>
+                            <p class="card-text"><strong>Philosophy:</strong> Dr. <%= request.getParameter("name") %> believes in a holistic approach to health, combining balanced nutrition, physical activity, and mental well-being to achieve long-term wellness.</p>
+                            <a href="paymentgateway.jsp" class="btn btn-success">Consult Now</a>
                         </div>
                     </div>
-                <% } %>
+                </div>
             </div>
         </section>
     </main>

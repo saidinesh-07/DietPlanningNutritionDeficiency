@@ -36,7 +36,7 @@
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header">Register</h6>
                                     <a class="dropdown-item" href="userreg">Register as User</a>
-                                    <a class="dropdown-item" href="registernutritionist">Register as Nutritionist</a>
+                                    <a class="dropdown-item" href="nutritionistreg">Register as Nutritionist</a>
                                 </div>
                             </div>
                         </li>

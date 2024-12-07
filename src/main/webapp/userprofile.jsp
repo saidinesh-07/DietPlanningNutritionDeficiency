@@ -3,9 +3,10 @@
 
 <%
     User user = (User) session.getAttribute("user");
-    if (user == null) {
-        response.sendRedirect("login.jsp"); // Redirect to login page if user is not logged in
-    }
+	if (user == null) {
+    	out.println("<h2>Session expired. Please <a href='login.jsp'>login</a> again.</h2>");
+    	return;
+}
 %>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
 
         /* Header styling */
         header {
-            background-color: #1E3A5F;
+            background-color: lightgreen;
             color: #fff;
             text-align: center;
             padding: 20px;
@@ -44,9 +45,23 @@
             padding: 20px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            text-align: center;
         }
 
-        /* Profile details */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #1E3A5F;
+        }
+
+        .profile-photo-upload {
+            margin: 20px auto;
+            text-align: center;
+        }
+
         .profile-details {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -81,9 +96,24 @@
             background-color: #25497A;
         }
 
-        /* Footer */
-        footer {
+        .update-photo-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
             background-color: #1E3A5F;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .update-photo-button:hover {
+            background-color: #25497A;
+        }
+
+        footer {
+            background-color: lightgreen;
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -98,6 +128,24 @@
 </header>
 
 <div class="profile-container">
+    <!-- Profile Photo -->
+<%--     <%
+    	String profilePhoto = (user != null && user.getProfilePhotoPath() != null && !user.getProfilePhotoPath().isEmpty())
+                        ? user.getProfilePhotoPath()
+                        : "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
+	%> --%>
+<%-- 	<img class="profile-photo" id="profilePhoto" src="<%= profilePhoto %>" alt="Profile Photo">
+     --%>
+
+    <!-- Profile Photo Upload -->
+    <div class="profile-photo-upload">
+        <form action="updateprofilephoto" method="post" enctype="multipart/form-data">
+            <input type="file" name="profilePhoto" accept="image/*" id="profilePhotoInput" required onchange="previewImage(event)">
+            <button type="submit" class="update-photo-button">Update Photo</button>
+        </form>
+    </div>
+
+    <!-- Profile Details -->
     <div class="profile-details">
         <div><b>ID:</b></div>
         <div><%= user.getId() %></div>
@@ -145,6 +193,20 @@
 <footer>
     <p>&copy; 2024 Diet & Nutrition Management. All Rights Reserved.</p>
 </footer>
+
+<script>
+    function previewImage(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function() {
+            const preview = document.getElementById('profilePhoto');
+            preview.src = reader.result;
+        };
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 
 </body>
 </html>

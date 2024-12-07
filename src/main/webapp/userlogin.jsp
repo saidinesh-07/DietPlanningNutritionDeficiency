@@ -10,6 +10,18 @@
     <title>User Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="style.css">
+    
+    	    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9lpqEH-UnBI3PAYhpUhN88mf_fstcC2f8UA&s'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Ensure full screen height */
+            margin: 0;
+        }
+    </style>
+    
 </head>
 <body>
 
@@ -36,6 +48,7 @@
         </form>
     </div>
 
+<br><br><br><br><br><br><br><br>
     <!-- Footer Section -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container text-center">
