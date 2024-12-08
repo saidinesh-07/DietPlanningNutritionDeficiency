@@ -3,6 +3,8 @@ package com.klef.jfsd.springboot.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import com.klef.jfsd.springboot.model.User;
 import com.klef.jfsd.springboot.service.AdminService;
 import com.klef.jfsd.springboot.service.NutritionistService;
 
+import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
@@ -24,6 +27,9 @@ public class AdminController
 {
     @Autowired
     private AdminService adminService;
+    
+    @Autowired 
+    private JavaMailSender mailSender;
 
     @Autowired
     private NutritionistService nutritionistService; // Add service for nutritionists
@@ -34,6 +40,52 @@ public class AdminController
         mv.setViewName("adminlogin");
         return mv;
     }
+    
+    @GetMapping("/sendemail")
+    public String redirectToEmailForm() {
+        return "email"; // Redirect to the email.jsp view
+    }
+    
+    
+    @PostMapping("/sendemail")
+    public ModelAndView sendEmail(HttpServletRequest request) {
+        ModelAndView mv = new ModelAndView();
+        try {
+            String name = request.getParameter("name");
+            String toemail = request.getParameter("email");
+            String subject = request.getParameter("subject");
+            String msg = request.getParameter("message");
+
+            MimeMessage mimeMessage = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+
+            // Generate 5-digit OTP
+            String otp = String.format("%05d", (int) (Math.random() * 99999));
+
+            helper.setTo(toemail);
+            helper.setSubject(subject);
+            helper.setFrom("ramakrishnavahinipathi@gmail.com");
+
+            String htmlContent = "<h3>Contact Form Details</h3>" +
+                    "<p><strong>Name:</strong> " + name + "</p>" +
+                    "<p><strong>Email:</strong> " + toemail + "</p>" +
+                    "<p><strong>Subject:</strong> " + subject + "</p>" +
+                    "<p><strong>Message:</strong> " + msg + "</p>" +
+                    "<p><strong>OTP:</strong> " + otp + "</p>";
+
+            helper.setText(htmlContent, true);
+            mailSender.send(mimeMessage);
+
+            mv.setViewName("mailsuccess");
+            mv.addObject("message", "Email Sent Successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mv.setViewName("emailerror");
+            mv.addObject("message", "Failed to send email. Please try again.");
+        }
+        return mv;
+    }
+    
     
     @GetMapping("dietplans")
     public ModelAndView dietplans() {

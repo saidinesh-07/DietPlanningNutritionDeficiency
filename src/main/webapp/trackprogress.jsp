@@ -15,7 +15,7 @@
             padding: 20px;
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
@@ -56,6 +56,25 @@
             text-align: center;
             font-style: italic;
             color: #e76f51;
+        }
+        .charts-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .charts-section h2 {
+            color: #2a9d8f;
+            margin-bottom: 10px;
+        }
+        .charts-section p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .charts-section img {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -121,6 +140,20 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- Charts and Graphs Section -->
+        <div class="charts-section">
+            <h2>Progress Visualized</h2>
+            <p>Below are the visualizations based on your progress:</p>
+            
+            <!-- Chart Image 1 -->
+            <img src="https://images.template.net/105329/diet-recommendation-pie-chart-bx5v3.jpeg" 
+                 alt="Diet Recommendations">
+            
+            <!-- Chart Image 2 -->
+            <img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/node_128512_graphs/graph-128512-04.jpg" 
+                 alt="Calories Comparison Chart">
+        </div>
     </div>
 </body>
 </html>

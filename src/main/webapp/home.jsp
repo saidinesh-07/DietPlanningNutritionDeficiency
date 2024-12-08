@@ -75,6 +75,7 @@
                     </p>
                     <div class="row">
                         <div class="col-md-4">
+                        <a href="dietplans.jsp">
                             <div class="card">
                                 <img src="https://plus.unsplash.com/premium_photo-1687959301529-e4d63d33b034?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlldCUyMHBsYW5zfGVufDB8fDB8fHww" class="card-img-top" alt="Personalized Plans">
                                 <div class="card-body">
@@ -82,8 +83,10 @@
                                     <p class="card-text">Get diet plans tailored to your health conditions, preferences, and lifestyle.</p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div class="col-md-4">
+                        <a href="viewallnutritionists">
                             <div class="card">
                                 <img src="https://images.unsplash.com/photo-1556911073-52527ac43761?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG51dHJpdGlvbmFsaXN0c3xlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Expert Nutritionists">
                                 <div class="card-body">
@@ -91,8 +94,10 @@
                                     <p class="card-text">Consult certified nutritionists for advice and support on your health journey.</p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div class="col-md-4">
+                        <a href="userlogin">
                             <div class="card">
                                 <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2dyZXNzJTIwdHJhY2tlcnxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Track Progress">
                                 <div class="card-body">
@@ -100,6 +105,7 @@
                                     <p class="card-text">Monitor your health progress with real-time tracking of your nutrient intake and goals.</p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </section>

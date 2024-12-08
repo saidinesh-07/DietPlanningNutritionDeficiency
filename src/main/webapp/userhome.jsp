@@ -69,7 +69,7 @@
                 <!-- Personalized Diet Plan -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Diet Plan">
+                        <img src="https://cdn.vectorstock.com/i/1000v/29/51/diet-plan-vector-21202951.jpg" class="card-img-top" alt="Diet Plan">
                         <div class="card-body">
                             <h5 class="card-title">Your Diet Plan</h5>
                             <p class="card-text">Access and download your personalized diet plan.</p>
@@ -81,7 +81,7 @@
                 <!-- Progress Tracker -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Progress Tracker">
+                        <img src="https://d1krbhyfejrtpz.cloudfront.net/solutions/wp-content/uploads/2023/03/09051545/Progress-Tracking-App-Featured-Images.jpg" class="card-img-top" alt="Progress Tracker">
                         <div class="card-body">
                             <h5 class="card-title">Progress Tracker</h5>
                             <p class="card-text">Monitor your health progress towards your goals.</p>
@@ -93,7 +93,7 @@
                 <!-- Consult Nutritionist -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Consult Nutritionist">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMcw37R7BvS17Ea-WXKZixneEXsxVHYIuSFQ&s" class="card-img-top" alt="Consult Nutritionist">
                         <div class="card-body">
                             <h5 class="card-title">Consult Nutritionist</h5>
                             <p class="card-text">Get expert advice and guidance from our nutritionists.</p>
